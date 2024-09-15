@@ -24,15 +24,9 @@ class Customer {
         Enumeration<Rental> rentals = _rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
         while (rentals.hasMoreElements()) {
-            double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();
+            frequentRenterPoints += each.getFrequentRentalPoints();
 
-            thisAmount += each.getChange();
-
-            frequentRenterPoints ++;
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
-                each.getDaysRented() > 1)
-                frequentRenterPoints ++;
             result += "\t" + each.getMovie().getTitle() + "\t" +
                 String.valueOf(each.getChange()) + "\n";
             totalAmount += each.getChange();
