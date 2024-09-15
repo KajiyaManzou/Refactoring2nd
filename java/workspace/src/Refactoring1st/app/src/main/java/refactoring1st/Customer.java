@@ -34,8 +34,8 @@ class Customer {
                 each.getDaysRented() > 1)
                 frequentRenterPoints ++;
             result += "\t" + each.getMovie().getTitle() + "\t" +
-                String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+                String.valueOf(each.getChange()) + "\n";
+            totalAmount += each.getChange();
         }
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
