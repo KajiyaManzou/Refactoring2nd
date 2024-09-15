@@ -15,6 +15,13 @@ class AppTest {
             "\tHarry Potter\t4.5\n" +
             "Amount owed is 18.5\n" +
             "You earned 4 frequent renter points";
+        
+            String htmlMessage = "<H1>Rental Record for <EM>Hiroshi</EM></H1><P>\n" +
+            "Rembo: 2.0<BR>\n" +
+            "Lord of the Rings: 12.0<BR>\n" +
+            "Harry Potter: 4.5<BR>\n" +
+            "<P>You owed <EM>18.5</EM><P>\n" +
+            "On this rental you earned <EM>4</EM> frequent renter points<P>";
 
 
         Movie REMBO = new Movie("Rembo", 0);
@@ -28,5 +35,6 @@ class AppTest {
 
         //assertNotEquals(coustomer.statement(), message);
         assertEquals(coustomer.statement(), message);
+        assertEquals(coustomer.htmlStatement(), htmlMessage);
     }
 }
